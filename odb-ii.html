@@ -4,43 +4,74 @@
 </head>
 
 <body>
-    <main class="container">
-        <h1>ODB-II Codes</h1>
-        {{> ad}}
-        <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit DTCs - diagnostic trouble codes. It also allows for real-time monitoring of vehicle paramaters such as speed, fuel consumption, and emissions.</p>
-        <p>I use a ScanGuage tool like the one at the right on my car. There are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.</p>
-        {{> search}}
-        {{> results}}
-    </main>
+
+        <header class="jumbotron">
+            <div class="container">
+                <span class="glyphicon glyphicon-dashboard pull-right"></span>
+                <h1>ODB-II Code Lookup</h1>
+                <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit DTCs - diagnostic trouble codes.</p>
+                <p>It also allows for real-time monitoring of vehicle paramaters such as speed, fuel consumption, and emissions.</p>  
+            </div>  
+        </header>
+    
+        <main class="container">
+            {{> search}}
+            {{> info}}
+        </main>
+    
+        <footer>
+            <div class="container">
+                <span class="glyphicon glyphicon-road"></span> <a href="/">ODB-II lookup tool</a> built by <a href="http://nfriedly.com">Nathan Friedly</a> with <a href="http://www.meteor.com/">Meteor</a> and <a href="glyphicon glyphicon-road">Bootstrap</a>.
+            </div>
+        </footer>
+    </div>
 </body>
 
 <template name="search">
-    <form>
-    <h2>Search</h2>
-    <input value="{{query}}" class="query form-control" name="query" autofocus placeholder="Type a code here to filter the results below"/> 
-    <button class="btn btn-info" type="submit">Search</button>
-    </form>
-</template>
-
-
-<template name="ad">
-    <div class="ad">
-        {{#constant}}
-            <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=nfriedly-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B000AAMY86" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-        {{/constant}}
+    <section class="search panel panel-primary">
+    <div class="panel-heading"><h2 class="panel-title">Search</h2></div>
+    <div class="panel-body">
+        <form>
+            <p>Type your code below. For a quick example, try P1566.</p>
+            <div class="row">
+                <div class="col-sm-10">
+                    <input value="{{query}}" class="query form-control" name="query" autofocus placeholder="Type a code here to see the description"/>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        {{> results}}
     </div>
 </template>
 
 <template name="results">
-    <h2>Codes</h2>
-    {{#unless isMatch}}No codes found.{{/unless}}
-    <ul class="results">
-        {{#each codes}}
-            {{> code}}
-        {{/each}} 
-    </ul>
+    {{#if hasQuery}}
+         {{#if hasNoMatches}}
+            <div class="alert alert-warning">No matching codes found.</div>
+        {{/if}}
+        <ul class="results list-group">
+            {{#each codes}}
+                {{> code}}
+            {{/each}} 
+        </ul>
+    {{/if}}
 </template>
 
 <template name="code">
-    <li><strong>{{code}}</strong>: {{description}}</li>
+    <li class="list-group-item"><strong>{{code}}</strong>: {{description}}</li>
+</template>
+
+<template name="info">
+    <section class="info panel panel-info">
+        <div class="panel-heading"><h2 class="panel-title">How to read your car's ODB-I codes.</h2></div>
+        <div class="panel-body">
+            <div class="ad">
+                <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B000AAMY86&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=nfriedly-20" alt="ScanGuage image"></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=nfriedly-20&l=as2&o=1&a=B000AAMY86" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            </div> 
+            <p>I use a <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20">ScanGuage</a> tool like the one at the right on my car. This is one of the more advanced models - in addition to engine codes and clearing the Check Engine light, it gives me realtime statistics on things such as fuel consumption, horsepower, O2 sensor data, and quite a bit more. It costs around $170, but there are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />. The tool plugs into the ODB-II port that is beneath the steering wheel on most vehicles.</p>
+            <p><a href="https://en.wikipedia.org/wiki/On-board_diagnostics">Learn more about ODB.</a></p>
+        </div>
+    </section>
 </template>
