@@ -1,0 +1,41 @@
+<head>
+  <title>Look up ODB-II diagnostic codes.</title>
+</head>
+
+<body>
+    {{> ad}}
+    <h1>ODB-II Codes</h1>
+    <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit DTCs - diagnostic trouble codes. It also allows for real-time monitoring of vehicle paramaters such as speed, fuel consumption, and emissions.</p>
+    <p>I use a ScanGuage tool like the one at the right on my car. There are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.</p>
+    {{> search}}
+    {{> results}}
+</body>
+
+<template name="search">
+    <h2>Search</h2>
+    <input id="query" name="query" Xplaceholder="type your code here to filter the results below" value="{{query}}"/> 
+    <button>Search</button>
+</template>
+
+
+<template name="ad">
+    <div class="ad">
+        {{#constant}}
+            <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=nfriedly-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B000AAMY86" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+        {{/constant}}
+    </div>
+</template>
+
+<template name="results">
+    <h2>Codes</h2>
+    {{#unless isMatch}}No codes found.{{/unless}}
+    <ul class="results">
+        {{#each codes}}
+            {{> code}}
+        {{/each}} 
+    </ul>
+</template>
+
+<template name="code">
+    <li><strong>{{code}}</strong>: {{description}}</li>
+</template>
