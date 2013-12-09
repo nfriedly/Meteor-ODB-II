@@ -1,3 +1,5 @@
 /* CSS declarations go here */
 
 .ad { float: right; }
+
+input.form-control { display: inline; width: calc(100% - 20em); }
