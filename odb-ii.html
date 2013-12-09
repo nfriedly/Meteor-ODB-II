@@ -1,12 +1,12 @@
 <head>
-  <title>Look up ODB-II diagnostic codes.</title>
+  <title>Look up ODB-II diagnostic codes</title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">
 </head>
 
 <body>
     <main class="container">
-        {{> ad}}
         <h1>ODB-II Codes</h1>
+        {{> ad}}
         <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit DTCs - diagnostic trouble codes. It also allows for real-time monitoring of vehicle paramaters such as speed, fuel consumption, and emissions.</p>
         <p>I use a ScanGuage tool like the one at the right on my car. There are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.</p>
         {{> search}}
@@ -15,9 +15,11 @@
 </body>
 
 <template name="search">
+    <form>
     <h2>Search</h2>
-    <input id="query" class="form-control" name="query" Xplaceholder="type your code here to filter the results below" value="{{query}}"/> 
-    <button class="btn btn-info">Search</button>
+    <input value="{{query}}" class="query form-control" name="query" autofocus placeholder="Type a code here to filter the results below"/> 
+    <button class="btn btn-info" type="submit">Search</button>
+    </form>
 </template>
 
 

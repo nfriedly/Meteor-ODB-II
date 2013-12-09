@@ -4,20 +4,20 @@ if (Meteor.isClient) {
   Template.results.codes = function () {
     var query = Session.get("query")
     // todo: figure out if there's a better way to do this
-    var search = query ? {$where: function() {
+    var search = (query && query.length > 3) ? {$where: function() {
         return this.code.indexOf(query) != -1;
     }} : {}
     return Codes.find(search);
   };
   
-  function updateQuery() {
-    var query =  document.getElementById("query").value;
-    Session.set("query", query);
+  function updateQuery(event,template) {
+    event.preventDefault();
+    Session.set("query", template.find(".query").value.toUpperCase());
   }
   
   Template.search.events({
-    //'keyup input': updateQuery, todo: make this not lag the system, then re-enable it
-    'click button': updateQuery
+    'keyup input': updateQuery,
+    "submit form": updateQuery
   });
   
   Template.search.query = function() {
