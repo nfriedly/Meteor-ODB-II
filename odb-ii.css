@@ -1,4 +1,4 @@
-.jumbotron .glyphicon { font-size: 300%; margin-top: 20px; margin-left: 10px;}
+.jumbotron .glyphicon { font-size: 500%; margin-top: 20px; margin-left: 10px;}
 .jumbotron p {font-size: 70%; }
 @media (min-width: 768px) {
     .jumbotron .glyphicon { font-size: 600%; }
@@ -7,6 +7,9 @@
 .search button { width: 100%; }
 
 .search .row { margin-bottom: 20px; }
+
+.thumbnail img { width: 100%; }
+.thumbnail h6 { text-align: center; }
 
 header, footer { 
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
