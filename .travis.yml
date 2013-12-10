@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- curl https://install.meteor.com | /bin/sh
+script:
+- 'meteor deploy odb-ii --password $PASS'
+# $PASS is encrypted below. Update it by running travis encrypt --add -r user-org-name/repo-name 'PASS="<your password>"'
+env:
+  global:
+    secure: h6uNfI8nE/JsYjcnRWbovA90yiK8pkAj5NccAXfIjv+BBwW1m4LsioEw9vnX7ss+kCB38A1+4X7wHFAn2M4gYGrb8efg7iC9wZLwGWz2pn2z4DBl+h+JlP4qWtLvZXLCPymTAcw6F77emt8KWIyDJfddzfv5AvttSgaQ9vsf4Io=
