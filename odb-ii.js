@@ -1,6 +1,7 @@
 Codes = new Meteor.Collection('codes');
 
 function getMatches(query) {
+    check(query, String);
     query = (query || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
     var cursor;
     if (query) {
@@ -44,7 +45,9 @@ if (Meteor.isClient) {
     };
 
     Template.results.hasQuery = function() {
-        return !!Session.get('query');
+        var query = Session.get('query');
+        // every code starts with 'P', so it doesn't make much sense to load results for just one character
+        return !!query && query.length > 1;
     };
 
     Template.results.hasNoMatches = function() {
