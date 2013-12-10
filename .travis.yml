@@ -4,7 +4,7 @@ node_js:
 before_install:
 - curl https://install.meteor.com | /bin/sh
 script:
-- ./deploy.sh
+- ./deploy/deploy.sh
 # $PASS is encrypted below. Update it by running travis encrypt --add -r <user-name>/<repo-name> 'PASS="<your password>"'
 env:
   global:
