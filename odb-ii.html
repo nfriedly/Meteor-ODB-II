@@ -9,7 +9,7 @@
             <div class="container">
                 <span class="glyphicon glyphicon-dashboard pull-right"></span>
                 <h1>ODB-II Code Lookup</h1>
-                <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit DTCs - diagnostic trouble codes.</p>
+                <p>ODB-II is short for "On-board diagnostics, version 2" - it's the standard way way for vehicles to self-diagnose problems and emit diagnostic trouble codes.</p>
                 <p>It also allows for real-time monitoring of vehicle paramaters such as speed, fuel consumption, and emissions.</p>  
             </div>  
         </header>
@@ -32,7 +32,7 @@
     <div class="panel-heading"><h2 class="panel-title">Search</h2></div>
     <div class="panel-body">
         <form>
-            <p>Type your code below. For a quick example, try P1566.</p>
+            <p>Type a code below. For a quick example, try P1566.</p>
             <div class="row">
                 <div class="col-sm-10">
                     <input value="{{query}}" class="query form-control" name="query" autofocus placeholder="Type a code here to see the description"/>
@@ -65,13 +65,21 @@
 
 <template name="info">
     <section class="info panel panel-info">
-        <div class="panel-heading"><h2 class="panel-title">How to read your car's ODB-I codes.</h2></div>
+        <div class="panel-heading"><h2 class="panel-title">How to read your car's ODB-II codes</h2></div>
         <div class="panel-body">
-            <div class="ad">
-                <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B000AAMY86&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=nfriedly-20" alt="ScanGuage image"></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=nfriedly-20&l=as2&o=1&a=B000AAMY86" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-            </div> 
-            <p>I use a <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20">ScanGuage</a> tool like the one at the right on my car. This is one of the more advanced models - in addition to engine codes and clearing the Check Engine light, it gives me realtime statistics on things such as fuel consumption, horsepower, O2 sensor data, and quite a bit more. It costs around $170, but there are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />. The tool plugs into the ODB-II port that is beneath the steering wheel on most vehicles.</p>
-            <p><a href="https://en.wikipedia.org/wiki/On-board_diagnostics">Learn more about ODB.</a></p>
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20" class="thumbnail"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B000AAMY86&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=nfriedly-20" alt="picture of a ScanGuage tool"></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=nfriedly-20&l=as2&o=1&a=B000AAMY86" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                </div>
+                <div class="col-sm-8">
+                    <p>Whenever your car's check engine light is on, there is at least one ODB-II code waiting for you. You can read the code (and turn off the light) by plugging a scanner into the ODB-II port (shown at the right) which is usually below your steering wheel.</p>
+                    <p>I use a <a href="http://www.amazon.com/gp/product/B000AAMY86/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B000AAMY86&linkCode=as2&tag=nfriedly-20">ScanGuage</a>, it's one of the more advanced models. In addition to engine codes and clearing the Check Engine light, it also connects to the Engine Control Unit and displays realtime data on fuel consumption, horsepower, O2 sensor data, and quite a bit more. It costs around $170, but there are also some <a target="_blank" href="http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&keywords=odb-ii&linkCode=ur2&qid=1386516140&rh=n%3A15707381%2Ck%3Aodb-ii&rnid=2941120011&tag=wealtmanagpar-20">less expensive models available</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=wealtmanagpar-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.</p>
+                    <p><a href="https://en.wikipedia.org/wiki/On-board_diagnostics">Learn more about ODB.</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <a href="https://en.wikipedia.org/wiki/File:OBD_002.jpg" class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/OBD_002.jpg/320px-OBD_002.jpg" alt="picture of an ODB-II port"></a>
+                </div>
+            </div>
         </div>
     </section>
 </template>

@@ -8,8 +8,6 @@
 
 .search .row { margin-bottom: 20px; }
 
-.ad { float: right; }
-
 header, footer { 
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
   background-image: -webkit-linear-gradient(#ffffff, #eeeeee 50%, #e4e4e4);
