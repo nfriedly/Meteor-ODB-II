@@ -1,0 +1,24 @@
+{
+  "name": "odb-ii",
+  "version": "1.0.0",
+  "description": "Quick lookup tool for ODB-II vehicle diagnostic codes",
+  "main": "odb-ii.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "run": "meteor",
+    "test": "npm run test-integration",
+    "test-integration": "casperjs test tests/*.casper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nfriedly/Meteor-ODB-II.git"
+  },
+  "author": "Nathan Friedly - http://nfriedly.com/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nfriedly/Meteor-ODB-II/issues"
+  },
+  "devDependencies": {}
+}

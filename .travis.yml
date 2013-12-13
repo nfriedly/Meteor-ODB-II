@@ -1,11 +1,32 @@
 language: node_js
 node_js:
 - '0.10'
+
+# see http://about.travis-ci.org/docs/user/build-configuration/#Build-Lifecycle 
+
+# install meteor and casperjs
 before_install:
 - curl https://install.meteor.com | /bin/sh
+- ./tests/pre_test.sh
+
 script:
+# start meteor in the background
+- meteor &
+# run integration tests. 
+# todo: add unit tests
+# Travis CI does this automatically for node projects, but I'm putting it here to make sure it runs after meteor starts up
+- npm test
+
+# deploy! - but only if the tests passed
+after_success:
 - ./deploy/predeploy.sh
 - ./deploy/deploy.sh
+
+# kill meteor
+# todo: make this less awful
+after_script:
+- killall node
+
 # $PASS is encrypted below. Update it by running travis encrypt --add -r <user-name>/<repo-name> 'PASS="<your password>"'
 env:
   global:
