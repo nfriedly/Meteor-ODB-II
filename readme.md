@@ -1,6 +1,8 @@
 ODB-II Code search
 ==================
 
+[![Build Status](https://travis-ci.org/nfriedly/Meteor-ODB-II.png?branch=master)](https://travis-ci.org/nfriedly/Meteor-ODB-II)
+
 A quick app I built to learn Meteor better. Looks up Engine diagnostic codes as you type.
 
 Start the server like so:
