@@ -30,6 +30,4 @@ after_script:
 # $EMAIL and $PASS are encrypted below. Update by running travis encrypt --add -r <user-name>/<repo-name> 'PASS="<your password>"'
 env:
   global:
-  - secure: h6uNfI8nE/JsYjcnRWbovA90yiK8pkAj5NccAXfIjv+BBwW1m4LsioEw9vnX7ss+kCB38A1+4X7wHFAn2M4gYGrb8efg7iC9wZLwGWz2pn2z4DBl+h+JlP4qWtLvZXL
-  - secure: eimExo3OyFhomIpMbTeiYy4h3FbQaTJAn+TUXLSE2RTPlwMdTabdJQmhY+9lg+oGOwNl2XxkgmWr1s8JbgCp3WRFgNFCaj5jpL9NtKjDUC9k0SBKRI4O5ovfW3nvSreIMtMIgBHqOcAETaAnYXJngFHkngtc7d4CR3JLCtvhkI4=
-
+  - secure: "RMbfqGO7eHUKXN5KAkm/g/lIpKfoeUB54OIeIdHOgNEU6oZ5jn+xhNrPiCK/1SoEhz8ZWPygGPeHkf+69Zf3WCQHa0OkCyGIJH7LmN3XgrrDyJsdGn3uMdkyvTyz61NXzDdJTb4u8bXE6DIRCLX1KVHsdHmzJhnauzf9v/HCLww="
