@@ -28,21 +28,22 @@
 
 <template name="search">
     <section class="search panel panel-primary">
-    <div class="panel-heading"><h2 class="panel-title">Search</h2></div>
-    <div class="panel-body">
-        <form>
-            <p>Type a code below. For a quick example, try P1566.</p>
-            <div class="row">
-                <div class="col-sm-10">
-                    <input value="{{query}}" class="query form-control" name="odb-ii-code" autofocus placeholder="Type a code here to see the description"/>
+        <div class="panel-heading"><h2 class="panel-title">Search</h2></div>
+        <div class="panel-body">
+            <form>
+                <p>Type a code below. For a quick example, try P1566.</p>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <input value="{{query}}" class="query form-control" name="odb-ii-code" autofocus placeholder="Type a code here to see the description"/>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
                 </div>
-                <div class="col-sm-2">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </div>
-            </div>
-        </form>
-        {{> results}}
-    </div>
+            </form>
+            {{> results}}
+        </div>
+    </section>
 </template>
 
 <template name="results">
