@@ -3,18 +3,21 @@ ODB-II Code search
 
 [![Build Status](https://travis-ci.org/nfriedly/Meteor-ODB-II.png?branch=master)](https://travis-ci.org/nfriedly/Meteor-ODB-II)
 
-A quick app I built to learn Meteor better. Looks up Engine diagnostic codes as you type.
+A quick app I built to learn [Meteor](https://www.meteor.com) better. Looks up Engine diagnostic codes as you type.
 
 Start the server like so:
 
     cd meteor-odb-ii/
     meteor
-    
+
+
+Note: I initially created this app on Meteor 0.6, and while it's currently running on 1.x with everything working,
+some of the patterns might be outdated, so it's probably not a good example app at this point.
     
 MIT License
 ===========
 
-Copyright (c) 2010 by Nathan Friedly - http://nfriedly.com
+Copyright (c) 2015 by Nathan Friedly - http://nfriedly.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

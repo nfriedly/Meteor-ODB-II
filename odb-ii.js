@@ -19,7 +19,7 @@ function getMatches(query) {
 if (Meteor.isClient) {
 
     Deps.autorun(function() {
-        Meteor.subscribe('codes', Session.get('query'));
+        Meteor.subscribe('codes', Session.get('query') || '');
     });
 
     function updateQuery(event, template) {
@@ -38,7 +38,7 @@ if (Meteor.isClient) {
 
 
     Template.results.codes = function() {
-        var cursor = getMatches(Session.get('query'));
+        var cursor = getMatches(Session.get('query') || '');
         Session.set('hasNoMatches', cursor.count() === 0);
         Session.set('hasOneMatch', cursor.count() === 1)
         return cursor;
